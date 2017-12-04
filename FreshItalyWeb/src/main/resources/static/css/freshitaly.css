@@ -1,0 +1,26 @@
+body.fixed-navbar {  
+	padding-top: 76px;
+	padding-bottom: 70px;
+}
+.login{
+	background: url(/images/bg-login.png) center center/cover no-repeat fixed; 
+}
+.bg-white {
+	background-color: #fff;
+}
+div.ajax-loader {
+    display:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('/images/ajax-loader.gif') scroll no-repeat 50% 50% transparent;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";       /* IE 8 */
+	filter: alpha(opacity=50);  /* IE 5-7 */
+	-moz-opacity: 0.5;          /* Netscape */
+	-khtml-opacity: 0.5;        /* Safari 1.x */
+	opacity: 0.5;               /* Good browsers */
+}
+#success_message{ display: none;}

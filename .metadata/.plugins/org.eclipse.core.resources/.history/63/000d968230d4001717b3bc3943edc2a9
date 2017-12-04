@@ -1,0 +1,12 @@
+package com.freshitaly;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class FreshItalyRestServicesApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(FreshItalyRestServicesApplication.class, args);
+	}
+}

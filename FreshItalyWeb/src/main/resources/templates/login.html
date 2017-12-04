@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title></title>
+	<link rel="stylesheet" href="/bootstrap-3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/css/freshitaly.css" />
+	
+	<script src="/jquery/jquery-3.2.1.min.js"></script>    
+	<script src="/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+	<script src="/js/freshitaly.js"></script>
+</head>
+<body class="login">
+	<form name="loginform" method="post" target="_self" action="/buyer">
+	    <div class="container">
+	    	<div class="text-center" style="margin:120px auto; width:400px;">
+		    	<img src="/images/logo-scritta.png" width="240" height="68"/>
+		    	<br/><br/>
+				<hr/>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon1"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
+					<input type="text" name="userid" class="form-control" placeholder="Username" aria-describedby="basic-addon1" required="required"/>
+				</div>
+				<br/>
+				<div class="input-group">
+					<span class="input-group-addon" id="basic-addon2"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>
+					<input type="password" name="password" class="form-control" placeholder="password" aria-describedby="basic-addon2" required="required"/>
+				</div>
+				<br/>
+				<div class=" text-right">
+					<input type="submit" value="Accedi" id="login" class="btn btn-primary btn-lg"/>
+				</div>
+				<br/>
+				<div class=" text-right">
+					<a href="#" onclick="openForgotPwdDlg(); return false;">Password dimenticata?</a>
+				</div>
+				<hr/>
+				<h4 class="text-left" style="color:#fff;">Non hai un account FreshItaly?<br/>Procedi con la registrazione al portale</h4>
+				<div class="text-left">
+					<input type="button" value="Registrati" onclick="openRegistrationPage();" class="btn btn-primary btn-lg"/>
+				</div>
+			</div>
+		</div>
+	</form>
+<div class="modal fade" id="modalForgotPwd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<form id="formConfirmRequest" method="POST" class="form-horizontal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">
+						Recupera la password
+					</h4>
+				</div>
+				<div class="modal-body">
+					<div id="requestOk" class="alert alert-success" role="alert">
+						<div class="text-center">
+							<label class="block">Mail inviata con successo</label>
+						</div>
+					</div>
+					<div id="containerBody">
+						<div id="requestError" class="alert alert-danger" role="alert">
+							<div class="text-center">
+								<label class="block">Username e/o email non sono corretti</label>
+							</div>
+						</div>
+						<p>
+							Inserire il nome utente e il suo indirizzo email registrato. Se i dati corrispondono verr&agrave; inviata una email all'indirizzo email indicato con le istruzioni per il recupero.
+						</p>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">Utente</label>
+							<div class="col-sm-10">
+								<input type="text" id="username" name="j_username" class="form-control" required="required" autofocus="autofocus"/>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-2 control-label">E-mail</label>
+							<div class="col-sm-10">
+								<input type="text" id="email" name="j_email" class="form-control" required="required"/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="inline-block">
+						<button type="button" class="btn btn-default" data-dismiss="modal">
+							Annulla
+						</button>
+						<button id="btnRequest" type="button" data-style="zoom-out" class="btn btn-primary ladda-button press">
+							Richiedi
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+
+function openForgotPwdDlg() {
+	//$("#formConfirmRequest").validate().resetForm();
+	$("#requestError").hide();
+	$('#modalForgotPwd').modal('show');
+	$("#requestOk").hide();
+}
+function openRegistrationPage(){
+	$('[name="loginform"]').attr("action", "/registration");
+	$('[name="loginform"]').submit();
+}
+</script>
+</body>
+</html>

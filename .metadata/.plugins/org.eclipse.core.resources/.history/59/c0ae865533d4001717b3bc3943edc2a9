@@ -1,0 +1,5 @@
+package com.freshitaly.web.rest.controller;
+
+public class RestServiceController {
+
+}

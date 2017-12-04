@@ -1,0 +1,43 @@
+﻿@font-face
+{
+   font-family:'Wingdings';
+   src=url(wingdings.ttf) format('truetype');
+   font-weight: normal;
+   font-style: normal;
+}
+
+.wingdings {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Wingdings';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  font-size: 125%;
+}
+
+.wingdings-smile:before {
+  content: "\4a";
+}
+
+.wingdings-sad:before {
+  content: "\4c";
+}
+
+.wingdings-no-expression:before {
+  content: "\4b";
+}
+
+.wingdings-thumbs-up:before {
+  content: "\43";
+}
+
+.wingdings-thumbs-down:before {
+  content: "\44";
+}
+
+.wingdings-mail:before {
+  content: "\2a";
+}
